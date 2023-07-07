@@ -1,0 +1,46 @@
+* {
+    background-color: #D4E4F7;
+    margin: 0;
+    padding: 0;
+}
+
+/*HEADER*/
+
+#header {
+    display: flex;
+    flex: 1;
+    color: #236AB9;
+    height: 150px;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#title {
+    font-size: 5em;
+}
+
+/*MAIN*/
+
+button {
+    background-color: #341C09;
+    color: #FC7307;
+}
+
+#main {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 500px;
+}
+
+#main_left {
+    display: flex;
+    width: 35%;
+    justify-content: center;
+    align-items: center;
+}
+
+#main_right {
+    width: 65%;
+    background-color: white;
+}
