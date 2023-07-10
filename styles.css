@@ -24,6 +24,9 @@
 button {
     background-color: #341C09;
     color: #FC7307;
+    font-size: 32px;
+    width: 175px;
+    border-radius: .3em;
 }
 
 #main {
@@ -35,12 +38,20 @@ button {
 
 #main_left {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 35%;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 #main_right {
     width: 65%;
-    background-color: white;
+    padding-left: 30px;
+}
+
+#container {
+    background-color: pink;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: .3em;
 }
