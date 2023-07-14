@@ -45,13 +45,16 @@ button {
 }
 
 #main_right {
+    
     width: 65%;
     padding-left: 30px;
 }
 
 #container {
+    display: flex;
+    flex-direction: column;
     background-color: pink;
-    height: 100%;
-    aspect-ratio: 1/1;
+    height: 500px;
+    width: 500px;
     border-radius: .3em;
 }
