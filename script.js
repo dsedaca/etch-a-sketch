@@ -1,8 +1,7 @@
 let grid = document.getElementById('container');
 const show = document.getElementById('show');
-let containerStyles = document.styleSheets[0].cssRules[7].style; // Pulling information for the '#container' rule in the stylesheet. May need to change the number in the 'cssRules' portion to make sure it grabs the correct information
-let containerHeight = containerStyles.getPropertyValue('height');
-let containerWidth = containerStyles.getPropertyValue('width');
+let containerHeight = 500;
+let containerWidth = 500;
 let divGrid;
 let divRow;
 let divRemove;
@@ -14,26 +13,21 @@ function createGrid(num) {
     let figureDivWidth = parseInt(containerWidth) / parseInt(num);;
     let newDivHeight;
     let newDivWidth;
-
-    for (let i = 0; i < num; i++) {
+    
+    for (var i = 0; i < num; i++) {
         divGrid = document.createElement('div');
-        divGrid.innerHTML = 'Div ' + (i + 1);
-        divGrid.style.backgroundColor = 'red';
-        newDivHeight = figureDivHeight + 'px';
-        newDivWidth = figureDivWidth + 'px';
-        divGrid.style.height = newDivHeight;
-        divGrid.style.width = newDivWidth;
-        grid.appendChild(divGrid);
-        for (let y = 0; y < num; y++) {
-            divRow = document.createElement('span');
-            divRow.innerHTML = 'Span ' + (y + 1);
-            divRow.style.backgroundColor = 'red';
+        divGrid.className = 'grid';
+        for (var j = 0; j < num; j++) {
+            divRow = document.createElement('div');
+            divRow.className = 'row';
+            divRow.style.backgroundColor = 'white';
             newDivHeight = figureDivHeight + 'px';
             newDivWidth = figureDivWidth + 'px';
             divRow.style.height = newDivHeight;
             divRow.style.width = newDivWidth;
-            grid.appendChild(divRow);
+            divGrid.appendChild(divRow);
         }
+        grid.appendChild(divGrid);
     }
 
     oldBlocks = num;
@@ -45,10 +39,6 @@ function removeGrid (oldValue) {
     for (let i = oldValue; i > 0; i--) {
         divRemove.remove();
         divRemove = document.getElementById('container').lastChild
-        for (let y = oldValue; y > 0; y--) {
-            divRemove.remove();
-            divRemove = document.getElementById('container').lastChild
-        }
     }
 }
 
@@ -56,6 +46,12 @@ show.addEventListener('click', () => {
     let numberOfBlocks = document.querySelector('#squares').value;
     let newBlocks = parseInt(numberOfBlocks);
 
-    removeGrid(oldBlocks);
-    createGrid(newBlocks);
+    if (newBlocks < 0 || newBlocks > 64) {
+        alert('Please choose a number between 0 and 64!')
+        document.querySelector('#squares').value = 0;
+    } else {
+        removeGrid(oldBlocks);
+        createGrid(newBlocks);
+    }
+    
 });
