@@ -44,8 +44,12 @@ button {
     align-items: flex-end;
 }
 
+#labelSquares {
+    margin-right: 10%;
+}
+
 #squares {
-    width: 175px;
+    width: 170px;
 }
 
 #main_right {
