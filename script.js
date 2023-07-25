@@ -53,8 +53,8 @@ function clearGrid (num) {
 
 }
 
-function eraseGrid () {
-
+function eraseGrid (square) {
+    
 }
 
 show.addEventListener('click', () => {
@@ -80,7 +80,7 @@ rainbow.addEventListener('click', () => {
 });
 
 eraser.addEventListener('click', () => {
-    document.getElementsByClassName('row').onmouseover
+
 });
 
 clear.addEventListener('click', () => {

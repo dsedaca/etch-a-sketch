@@ -42,6 +42,7 @@ button {
     gap: 20px;
     width: 35%;
     align-items: flex-end;
+    
 }
 
 #labelSquares {
@@ -56,6 +57,7 @@ button {
     
     width: 65%;
     padding-left: 30px;
+    
 }
 
 #container {
