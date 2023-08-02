@@ -23,7 +23,7 @@ function createGrid(num) {
         for (var j = 0; j < num; j++) {
             divRow = document.createElement('div');
             divRow.className = 'row';
-            divRow.style.backgroundColor = 'red';
+            divRow.style.backgroundColor = 'white';
             newDivHeight = figureDivHeight + 'px';
             newDivWidth = figureDivWidth + 'px';
             divRow.style.height = newDivHeight;
@@ -47,14 +47,51 @@ function removeGrid (num) {
 
 function clearGrid (num) {
     let totalGrid = document.getElementsByClassName('row');
+    let square = document.getElementsByClassName('row');
+
     for (let i = 0; i < totalGrid.length; i++) {
         totalGrid[i].style.backgroundColor = 'white';
     }
 
+    for (let i = 0; i < square.length; i++){
+        square[i].addEventListener('mouseover', () => {
+            square[i].style.backgroundColor = 'white';
+        })
+    }
+
 }
 
-function eraseGrid (square) {
-    
+function eraseGrid () {
+    let square = document.getElementsByClassName('row');
+
+    for (let i = 0; i < square.length; i++){
+        square[i].addEventListener('mouseover', () => {
+            square[i].style.backgroundColor = 'white';
+        })
+    }
+}
+
+function rainbowGrid () {
+    let square = document.getElementsByClassName('row');
+
+    const colors = ['FFF033', '40F00C', '0CF0C3', '0C47F0', 'CE5BF5', 'F56FC4', 'EC1038', 'F25757'];
+
+    for (let i = 0; i < square.length; i++){
+        square[i].addEventListener('mouseover', () => {
+            let colorChoice = Math.floor(Math.random() * 8);
+            square[i].style.backgroundColor = '#' + colors[colorChoice];
+        })
+    }
+}
+
+function blackGrid () {
+    let square = document.getElementsByClassName('row');
+
+    for (let i = 0; i < square.length; i++){
+        square[i].addEventListener('mouseover', () => {
+            square[i].style.backgroundColor = 'black';
+        })
+    }
 }
 
 show.addEventListener('click', () => {
@@ -72,15 +109,15 @@ show.addEventListener('click', () => {
 });
 
 black.addEventListener('click', () => {
-    
+    blackGrid ();
 });
 
 rainbow.addEventListener('click', () => {
-    
+    rainbowGrid ();
 });
 
 eraser.addEventListener('click', () => {
-
+    eraseGrid ();
 });
 
 clear.addEventListener('click', () => {
