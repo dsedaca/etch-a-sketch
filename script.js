@@ -98,9 +98,9 @@ show.addEventListener('click', () => {
     let numberOfBlocks = document.querySelector('#squares').value;
     let newBlocks = parseInt(numberOfBlocks);
 
-    if (newBlocks < 0 || newBlocks > 64) {
-        alert('Please choose a number between 0 and 64!')
-        document.querySelector('#squares').value = 0;
+    if (newBlocks < 1 || newBlocks > 64) {
+        alert('Please choose a number between 1 and 64!')
+        document.querySelector('#squares').value = 1;
     } else {
         removeGrid(oldBlocks);
         createGrid(newBlocks);
